@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/calc/add",
+			"name": "get add [0, 1]",
 			"event": [
 				{
 					"listen": "test",
@@ -16,16 +16,18 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 1\"] = jsonData.result === 1;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/add",
+				"url": "http://localhost:8080/calc/add?data=[0,1]",
 				"method": "GET",
 				"header": [
 					{
@@ -43,7 +45,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/calc/add",
+			"name": "get add [0, 1, 2, 3]",
 			"event": [
 				{
 					"listen": "test",
@@ -51,10 +53,49 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 5\"] = jsonData.result === 5;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/add?data=[0,1,2,3]",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "adds all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "post add [0, 1]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 1\"] = jsonData.result === 1;"
 						]
 					}
 				}
@@ -71,14 +112,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"some\":\"data\"}"
+					"raw": "{\n\t\"data\":[0, 1]\n}"
 				},
 				"description": "adds all numbers in the 'data' arg in the posted JSON"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/calc/sub",
+			"name": "post add [0, 1, 2, 3]",
 			"event": [
 				{
 					"listen": "test",
@@ -86,16 +127,55 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 5\"] = jsonData.result === 5;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/sub",
+				"url": "http://localhost:8080/calc/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[0, 1, 2, 3]\n}"
+				},
+				"description": "adds all numbers in the 'data' arg in the posted JSON"
+			},
+			"response": []
+		},
+		{
+			"name": "get sub [0, 1]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is -1\"] = jsonData.result === -1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/sub?data=[0,1]",
 				"method": "GET",
 				"header": [
 					{
@@ -113,7 +193,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/calc/sub",
+			"name": "get sub [0, 1, 2, 3]",
 			"event": [
 				{
 					"listen": "test",
@@ -121,10 +201,49 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is -6\"] = jsonData.result === -6;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/sub?data=[0,1,2,3]",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "subs all numbers in the 'data' arg in sequence"
+			},
+			"response": []
+		},
+		{
+			"name": "post sub [0, 1]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is -1\"] = jsonData.result === -1;"
 						]
 					}
 				}
@@ -141,14 +260,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"some\":\"data\"}"
+					"raw": "{\n\t\"data\":[0, 1]\n}"
 				},
 				"description": "subs all numbers in the 'data' arg in the posted JSON sequentially"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/calc/mul",
+			"name": "post sub [0, 1, 2, 3]",
 			"event": [
 				{
 					"listen": "test",
@@ -156,16 +275,55 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is -6\"] = jsonData.result === -6;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/mul",
+				"url": "http://localhost:8080/calc/sub",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[0, 1, 2, 3]\n}"
+				},
+				"description": "subs all numbers in the 'data' arg in the posted JSON sequentially"
+			},
+			"response": []
+		},
+		{
+			"name": "get mul [2, 2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 4\"] = jsonData.result === 4;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/mul?data=[2,2]",
 				"method": "GET",
 				"header": [
 					{
@@ -183,7 +341,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/calc/mul",
+			"name": "get mul [2, 2, 2, 2]",
 			"event": [
 				{
 					"listen": "test",
@@ -191,51 +349,18 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 16\"] = jsonData.result === 16;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/mul",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"some\":\"data\"}"
-				},
-				"description": "multiplies all numbers in the 'data' arg in the url"
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/calc/div",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);",
-							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
-							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
-							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/calc/div",
+				"url": "http://localhost:8080/calc/mul?data=[2,2,2,2]",
 				"method": "GET",
 				"header": [
 					{
@@ -253,7 +378,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/calc/div",
+			"name": "post mul [2, 2]",
 			"event": [
 				{
 					"listen": "test",
@@ -261,10 +386,160 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
-							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 4\"] = jsonData.result === 4;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/mul",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[2, 2]\n}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "post mul [2, 2, 2, 2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 16\"] = jsonData.result === 16;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/mul",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[2, 2, 2, 2]\n}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "get div [2,2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 1\"] = jsonData.result === 1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/div?data[0,1]",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "get div [2,2,2,2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 0.25\"] = jsonData.result === 0.25;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/div?data[0,1,2,3]",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "post div [2, 2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 1\"] = jsonData.result === 1;"
 						]
 					}
 				}
@@ -281,7 +556,44 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"some\":\"data\"}"
+					"raw": "{\n\t\"data\":[0,1]\n}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "post div [2, 2, 2, 2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
+							"tests[\"result is 0.25\"] = jsonData.result === 0.25;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/div",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[0, 1, 2, 3]\n}"
 				},
 				"description": "multiplies all numbers in the 'data' arg in the url"
 			},

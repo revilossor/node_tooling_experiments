@@ -7,7 +7,6 @@ var port = 8080;
 app.use(bodyParser.json());
 // urlencoded?
 
-
 router.route('/test').get((req, res) => {
   console.log('GET /test');
   res.json({success:true});

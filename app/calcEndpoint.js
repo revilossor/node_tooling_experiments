@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 router.route('/add').get((req, res) => {
-  res.json({success:true});
+  res.json({success:true}); 
 });
 router.route('/add').post((req, res) => {
   res.json({success:true});

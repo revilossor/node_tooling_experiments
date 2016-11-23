@@ -1,14 +1,27 @@
+function areAllArgsNumbers(args) {
+  for(i = 0; i < args.length; i++) {
+    if(typeof args[i] !== 'number') { return false; }
+  }
+  return true;
+}
+
+var onlyNumberArgumentsError = new Error("only accepts number arguments!");
+
 module.exports = {
-  add:(op1, op2)=>{
-    return 0;
+  add:function(op1, op2) {  // arrow functions DONT bind an arguments object!
+    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
+    return op1 + op2;
   },
-  sub:(op1, op2)=>{
-    return 0;
+  sub:function(op1, op2) {
+    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
+    return op1 - op2;
   },
-  mul:(op1, op2)=>{
-    return 0;
+  mul:function(op1, op2) {
+    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
+    return op1 * op2;
   },
-  div:(op1, op2)=>{
-    return 0;
+  div:function(op1, op2) {
+    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
+    return op1 / op2;
   }
 }

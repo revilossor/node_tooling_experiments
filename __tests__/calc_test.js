@@ -13,8 +13,8 @@ describe('calc', () => {
     });
   });
   describe('sub', () => {
-    it('subtracts 1 from 2 to equal 1', () => {
-      expect(sum.sub(1, 2)).toBe(1);
+    it('subtracts 2 from 1 to equal -1', () => {
+      expect(sum.sub(1, 2)).toBe(-1);
     });
     it('only accepts number arguments', () => {
       expect(()=>{sum.sub('1',2)}).toThrowError("only accepts number arguments!");

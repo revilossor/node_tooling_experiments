@@ -1,0 +1,21 @@
+{
+  "name": "tmp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-newman": "newman run newman/node_debug.postman_collection",
+    "start": "nodemon app/main.js",
+    "start-debug": "node --debug-brk app/main.js",
+    "attach-debug":"node debug localhost:5858",
+    "chrome-debug":"node --inspect app/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}

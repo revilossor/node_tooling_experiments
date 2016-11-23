@@ -1,0 +1,79 @@
+{
+	"variables": [],
+	"info": {
+		"name": "node_debug",
+		"_postman_id": "e5d9f47d-dbd0-96ce-4258-d391226ed392",
+		"description": "a spike on debugging node applications\n - stepping through using chrome debugger\n - using postman / neuman to test api endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body has 'success' field\"] = responseBody.has(\"success\");",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"success is true\"] = jsonData.success === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/api/test",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "just a basic POST"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body has 'success' field\"] = responseBody.has(\"success\");",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"success is true\"] = jsonData.success === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/api/test",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "just a basic GET"
+			},
+			"response": []
+		}
+	]
+}

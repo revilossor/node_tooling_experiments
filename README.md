@@ -22,4 +22,6 @@ The calls and the assertions are set up in [postman](https://www.getpostman.com/
 
 ### Jest unit tests
 
-[Jest](https://www.npmjs.com/package/jest-cli) is used to run unit tests.
+[Jest](https://www.npmjs.com/package/jest-cli) is used to run unit tests. Code coverage reports will be generated in coverage/
+
+ ---

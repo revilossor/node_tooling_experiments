@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/main.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run test-unit && npm run test-rest",
     "test-rest": "newman run newman/node_debug.postman_collection",
     "test-unit": "jest",
     "start": "nodemon app/main.js",
@@ -14,8 +14,7 @@
   },
   "jest": {
     "verbose": true,
-    "collectCoverage": true,
-    "coverageFormats":["html"]
+    "collectCoverage": true
   },
   "keywords": [],
   "author": "",

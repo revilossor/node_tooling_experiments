@@ -8,57 +8,24 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/api/test",
+			"name": "http://localhost:8080/calc/add",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Body has 'success' field\"] = responseBody.has(\"success\");",
-							"",
 							"var jsonData = JSON.parse(responseBody);",
-							"tests[\"success is true\"] = jsonData.success === true;"
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/api/test",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"some\":\"data\"}"
-				},
-				"description": "just a basic POST"
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/api/test",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Body has 'success' field\"] = responseBody.has(\"success\");",
-							"",
-							"var jsonData = JSON.parse(responseBody);",
-							"tests[\"success is true\"] = jsonData.success === true;"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/test",
+				"url": "http://localhost:8080/calc/add",
 				"method": "GET",
 				"header": [
 					{
@@ -71,7 +38,252 @@
 					"mode": "raw",
 					"raw": "{\"some\":\"data\"}"
 				},
-				"description": "just a basic GET"
+				"description": "adds all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "adds all numbers in the 'data' arg in the posted JSON"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/sub",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/sub",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "subs all numbers in the 'data' arg in sequence"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/sub",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/sub",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "subs all numbers in the 'data' arg in the posted JSON sequentially"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/mul",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/mul",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/mul",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/mul",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/div",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/div",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/calc/div",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"success is true\"] = jsonData.success === true;",
+							"tests[\"result is number\"] = typeof jsonData.result === \"number\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/div",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "multiplies all numbers in the 'data' arg in the url"
 			},
 			"response": []
 		}

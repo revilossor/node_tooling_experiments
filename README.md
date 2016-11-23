@@ -6,9 +6,11 @@ attach to debugger : ``` npm run attach-debug ```
 
 start chrome debugger : ``` npm run chrome-debug ```
 
-run newman tests : ``` npm run test-newman ```
+run newman REST tests : ``` npm run test-rest ```
 
-run jest unit tests : ``` npm test ```
+run jest unit tests : ``` npm run test-unit```
+
+run all tests : ``` npm test ```
 
 ---
 
@@ -20,4 +22,4 @@ The calls and the assertions are set up in [postman](https://www.getpostman.com/
 
 ### Jest unit tests
 
-Jest is used to run umit tests.
+[Jest](https://www.npmjs.com/package/jest-cli) is used to run unit tests.

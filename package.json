@@ -5,11 +5,17 @@
   "main": "app/main.js",
   "scripts": {
     "test": "jest",
-    "test-newman": "newman run newman/node_debug.postman_collection",
+    "test-rest": "newman run newman/node_debug.postman_collection",
+    "test-unit": "jest",
     "start": "nodemon app/main.js",
     "start-debug": "node --debug-brk app/main.js",
     "attach-debug": "node debug localhost:5858",
     "chrome-debug": "node --inspect app/main.js"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageFormats":["html"]
   },
   "keywords": [],
   "author": "",

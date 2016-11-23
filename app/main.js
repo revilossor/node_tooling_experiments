@@ -5,6 +5,8 @@ var router = express.Router();
 var port = 8080;
 
 app.use(bodyParser.json());
+// urlencoded?
+
 
 router.route('/test').get((req, res) => {
   console.log('GET /test');
@@ -17,6 +19,7 @@ router.route('/test').post((req, res) => {
 });
 
 app.use('/api', router);
+app.use('/calc', require('./calcEndpoint'));
 
 app.listen(port, (err) => {
   console.log('app listening on port ' + port);

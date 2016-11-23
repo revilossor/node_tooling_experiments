@@ -471,7 +471,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/div?data[0,1]",
+				"url": "http://localhost:8080/calc/div?data=[0,1]",
 				"method": "GET",
 				"header": [
 					{
@@ -508,7 +508,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/div?data[0,1,2,3]",
+				"url": "http://localhost:8080/calc/div?data=[0,1,2,3]",
 				"method": "GET",
 				"header": [
 					{

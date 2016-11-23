@@ -5,7 +5,8 @@ var router = express.Router();
 var port = 8080;
 
 app.use(bodyParser.json());
-// urlencoded?
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(require('./getDataParser'));
 
 app.use('/calc', require('./calcEndpoint'));
 

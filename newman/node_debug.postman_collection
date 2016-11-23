@@ -58,7 +58,7 @@
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 5\"] = jsonData.result === 5;"
+							"tests[\"result is 6\"] = jsonData.result === 6;"
 						]
 					}
 				}
@@ -132,7 +132,7 @@
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 5\"] = jsonData.result === 5;"
+							"tests[\"result is 6\"] = jsonData.result === 6;"
 						]
 					}
 				}
@@ -471,7 +471,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/div?data=[0,1]",
+				"url": "http://localhost:8080/calc/div?data=[2,2]",
 				"method": "GET",
 				"header": [
 					{
@@ -508,7 +508,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/calc/div?data=[0,1,2,3]",
+				"url": "http://localhost:8080/calc/div?data=[2,2,2,2]",
 				"method": "GET",
 				"header": [
 					{
@@ -556,7 +556,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"data\":[0,1]\n}"
+					"raw": "{\n\t\"data\":[2,2]\n}"
 				},
 				"description": "multiplies all numbers in the 'data' arg in the url"
 			},
@@ -593,7 +593,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"data\":[0, 1, 2, 3]\n}"
+					"raw": "{\n\t\"data\":[2, 2, 2, 2]\n}"
 				},
 				"description": "multiplies all numbers in the 'data' arg in the url"
 			},

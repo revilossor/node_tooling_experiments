@@ -16,10 +16,10 @@ var calc = require('./calc.js');
   @param operation the operation - 'add', 'sub', 'mul' or 'div'. Use the E_OPERATION enum!
   @returns the result of the operation
 */
-function calculate(operation, operands, total = 0) {
+function calculate(operation, operands, total) {
   return (operands.length === 0) ?
     total :
-    calculate(operation, operands, doOperation(operation, operands.shift(), operands.shift()));
+    calculate(operation, operands, doOperation(operation, (!total) ? operands.shift() : total, operands.shift()));
 }
 function doOperation(operation, op1, op2) {
   try{

@@ -24,15 +24,5 @@ module.exports = {
   div:function(op1, op2) {
     if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
     return op1 / op2;
-  },
-  E_OPERATION:{
-    ADD:'add',
-    SUB:'sub',
-    MUL:'mul',
-    DIV:'div'
-  },
-  errors:{
-    onlyNumberArgumentsError:onlyNumberArgumentsError,
-    unknownOperationError:unknownOperationError
   }
 }

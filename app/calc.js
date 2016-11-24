@@ -6,6 +6,7 @@ function areAllArgsNumbers(args) {
 }
 
 var onlyNumberArgumentsError = new Error("only accepts number arguments!");
+var unknownOperationError = new Error("unrecognised operation! cannot calculate!");
 
 module.exports = {
   add:function(op1, op2) {  // arrow functions DONT bind an arguments object!
@@ -23,5 +24,15 @@ module.exports = {
   div:function(op1, op2) {
     if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
     return op1 / op2;
+  },
+  E_OPERATION:{
+    ADD:'add',
+    SUB:'sub',
+    MUL:'mul',
+    DIV:'div'
+  },
+  errors:{
+    onlyNumberArgumentsError:onlyNumberArgumentsError,
+    unknownOperationError:unknownOperationError
   }
 }

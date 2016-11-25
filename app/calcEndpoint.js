@@ -12,9 +12,9 @@ function calculate(operation, operands, total) {
 }
 
 router.route('/:operation').get((req, res) => {
-  res.json(response.get(true, calculate(req.params.operation, req.query.data)));
+  res.json(response.get(calculate(req.params.operation, req.query.data)));
 }).post((req, res) => {
-  res.json(response.get(true, calculate(req.params.operation, req.body.data)));
+  res.json(response.get(calculate(req.params.operation, req.body.data)));
 });
 
 module.exports = router;

@@ -7,7 +7,6 @@ var port = 8080;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(require('./getDataParser'));
-
 app.use('/calc', require('./calcEndpoint'));
 
 app.listen(port, (err) => {

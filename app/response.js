@@ -1,8 +1,11 @@
 module.exports = {
-  get:(success, result) => {
+  get:(result) => {
+    var isSuccess = !(result instanceof Error);
+    console.log('isSuccess with ' + result + ' is ' + isSuccess);
     return {
-      success:success,
-      result:result
+      success:isSuccess,
+      result:(isSuccess) ? result : null,
+      error:(isSuccess) ? null : result
     }
   }
 }

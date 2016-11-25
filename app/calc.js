@@ -17,7 +17,7 @@ module.exports = {
       case 'sub': result = op1 - op2; break;
       case 'mul': result = op1 * op2; break;
       case 'div': result = op1 / op2; break;
-      default:    result = "unknown";  break;
+      default:    result = "unknown"; break;
     }
     if (result === "unknown") { throw unknownOperationError }
     return result;

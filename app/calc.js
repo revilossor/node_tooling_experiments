@@ -1,3 +1,6 @@
+var onlyNumberArgumentsError = new Error("only accepts number arguments!");
+var unknownOperationError = new Error("unrecognised operation! cannot calculate!");
+
 function areAllArgsNumbers(args) {
   for(i = 0; i < args.length; i++) {
     if(typeof args[i] !== 'number') { return false; }
@@ -5,24 +8,18 @@ function areAllArgsNumbers(args) {
   return true;
 }
 
-var onlyNumberArgumentsError = new Error("only accepts number arguments!");
-var unknownOperationError = new Error("unrecognised operation! cannot calculate!");
-
 module.exports = {
-  add:function(op1, op2) {  // arrow functions DONT bind an arguments object!
-    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
-    return op1 + op2;
-  },
-  sub:function(op1, op2) {
-    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
-    return op1 - op2;
-  },
-  mul:function(op1, op2) {
-    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
-    return op1 * op2;
-  },
-  div:function(op1, op2) {
-    if(!areAllArgsNumbers(arguments)) { throw onlyNumberArgumentsError; }
-    return op1 / op2;
+  doOperation:function(operation, op1, op2) {
+    if(!areAllArgsNumbers([op1, op2])) { throw onlyNumberArgumentsError; }
+    var result;
+    switch(operation) {
+      case 'add': result = op1 + op2; break;
+      case 'sub': result = op1 - op2; break;
+      case 'mul': result = op1 * op2; break;
+      case 'div': result = op1 / op2; break;
+      default:    result = "unknown";  break;
+    }
+    if (result === "unknown") { throw unknownOperationError }
+    return result;
   }
 }

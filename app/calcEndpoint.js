@@ -8,7 +8,7 @@ var calc = require('./calc.js');
 function calculate(operation, operands, total) {
   return (operands.length === 0) ?
     total :
-    calculate(operation, operands, calc[operation]((!total) ? operands.shift() : total, operands.shift()));
+    calculate(operation, operands, calc.doOperation(operation, (!total) ? operands.shift() : total, operands.shift()));
 }
 
 router.route('/:operation').get((req, res) => {

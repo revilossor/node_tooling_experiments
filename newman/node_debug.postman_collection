@@ -19,9 +19,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 1\"] = jsonData.result === 1;"
+							"tests[\"result is 1\"] = jsonData.result === 1;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -56,9 +58,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 6\"] = jsonData.result === 6;"
+							"tests[\"result is 6\"] = jsonData.result === 6;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -93,9 +97,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 1\"] = jsonData.result === 1;"
+							"tests[\"result is 1\"] = jsonData.result === 1;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -130,9 +136,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 6\"] = jsonData.result === 6;"
+							"tests[\"result is 6\"] = jsonData.result === 6;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -167,9 +175,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is -1\"] = jsonData.result === -1;"
+							"tests[\"result is -1\"] = jsonData.result === -1;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -204,9 +214,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is -6\"] = jsonData.result === -6;"
+							"tests[\"result is -6\"] = jsonData.result === -6;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -241,9 +253,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is -1\"] = jsonData.result === -1;"
+							"tests[\"result is -1\"] = jsonData.result === -1;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -278,9 +292,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is -6\"] = jsonData.result === -6;"
+							"tests[\"result is -6\"] = jsonData.result === -6;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -315,9 +331,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 4\"] = jsonData.result === 4;"
+							"tests[\"result is 4\"] = jsonData.result === 4;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -352,9 +370,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 16\"] = jsonData.result === 16;"
+							"tests[\"result is 16\"] = jsonData.result === 16;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -389,9 +409,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 4\"] = jsonData.result === 4;"
+							"tests[\"result is 4\"] = jsonData.result === 4;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -426,9 +448,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 16\"] = jsonData.result === 16;"
+							"tests[\"result is 16\"] = jsonData.result === 16;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -463,9 +487,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 1\"] = jsonData.result === 1;"
+							"tests[\"result is 1\"] = jsonData.result === 1;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -500,9 +526,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 0.25\"] = jsonData.result === 0.25;"
+							"tests[\"result is 0.25\"] = jsonData.result === 0.25;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -537,9 +565,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 1\"] = jsonData.result === 1;"
+							"tests[\"result is 1\"] = jsonData.result === 1;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -574,9 +604,11 @@
 							"tests[\"status code is 200\"] = responseCode.code === 200;",
 							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is true\"] = jsonData.success === true;",
 							"tests[\"result is number\"] = typeof jsonData.result === \"number\";",
-							"tests[\"result is 0.25\"] = jsonData.result === 0.25;"
+							"tests[\"result is 0.25\"] = jsonData.result === 0.25;",
+							"tests[\"error is null\"] = jsonData.error === null;"
 						]
 					}
 				}
@@ -596,6 +628,158 @@
 					"raw": "{\n\t\"data\":[2, 2, 2, 2]\n}"
 				},
 				"description": "multiplies all numbers in the 'data' arg in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "get unknown",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 404\"] = responseCode.code === 404;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
+							"tests[\"success is false\"] = jsonData.success === false;",
+							"tests[\"result is null\"] = jsonData.result === null;",
+							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/unknown?data=[0,1]",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "a get request to an unknown endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "post unknown",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 404\"] = responseCode.code === 404;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
+							"tests[\"success is false\"] = jsonData.success === false;",
+							"tests[\"result is null\"] = jsonData.result === null;",
+							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/unknown",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[0, 1]\n}"
+				},
+				"description": "a post request to an unknown endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "get invalid arguments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 400\"] = responseCode.code === 400;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
+							"tests[\"success is false\"] = jsonData.success === false;",
+							"tests[\"result is null\"] = jsonData.result === null;",
+							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/add?data=[\"q\",1]",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"some\":\"data\"}"
+				},
+				"description": "a get request with invalid arguments"
+			},
+			"response": []
+		},
+		{
+			"name": "post invalid arguments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"status code is 400\"] = responseCode.code === 400;",
+							"tests[\"has 'success' field\"] = responseBody.has(\"success\");",
+							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
+							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
+							"tests[\"success is false\"] = jsonData.success === false;",
+							"tests[\"result is null\"] = jsonData.result === null;",
+							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/calc/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[\"q\", 1]\n}"
+				},
+				"description": "posts to valid endpoint witn invalid json data"
 			},
 			"response": []
 		}

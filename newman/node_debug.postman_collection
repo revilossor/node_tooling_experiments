@@ -645,8 +645,7 @@
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is false\"] = jsonData.success === false;",
-							"tests[\"result is null\"] = jsonData.result === null;",
-							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+							"tests[\"result is null\"] = jsonData.result === null;"
 						]
 					}
 				}
@@ -683,8 +682,7 @@
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is false\"] = jsonData.success === false;",
-							"tests[\"result is null\"] = jsonData.result === null;",
-							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+							"tests[\"result is null\"] = jsonData.result === null;"
 						]
 					}
 				}
@@ -721,8 +719,7 @@
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is false\"] = jsonData.success === false;",
-							"tests[\"result is null\"] = jsonData.result === null;",
-							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+							"tests[\"result is null\"] = jsonData.result === null;"
 						]
 					}
 				}
@@ -759,8 +756,7 @@
 							"tests[\"has 'result' field\"] = responseBody.has(\"result\");",
 							"tests[\"has 'error' field\"] = responseBody.has(\"error\");",
 							"tests[\"success is false\"] = jsonData.success === false;",
-							"tests[\"result is null\"] = jsonData.result === null;",
-							"tests[\"error is an Error\"] = jsonData.error instanceof Error;"
+							"tests[\"result is null\"] = jsonData.result === null;"
 						]
 					}
 				}

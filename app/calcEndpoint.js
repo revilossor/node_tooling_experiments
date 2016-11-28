@@ -18,12 +18,12 @@ function handleRequest(req, res, data) {
     res.status(200).json(returnObject);
   } else {
     var status;
-    switch (returnObject.error){
+    switch (returnObject.error) {
       case error.invalidArgumentError : status = 400; break;
       case error.unknownOperationError : status = 404; break;
       default: status = 500;
     }
-    res.status(status).json(returnObject);
+    res.status(status).json(response.stringify(returnObject));    // have to .toString the error - NOT stringify, which express appears to do
   }
 }
 

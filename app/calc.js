@@ -1,5 +1,4 @@
-const onlyNumberArgumentsError = new Error("only accepts number arguments!");
-const unknownOperationError = new Error("unrecognised operation! cannot calculate!");
+var error = require('./error');
 
 function areAllArgsNumbers(args) {
   for(i = 0; i < args.length; i++) {
@@ -12,7 +11,7 @@ module.exports = {
   doOperation:function(operation, op1, op2) {
     var result;
     if(!areAllArgsNumbers([op1, op2])) {
-      result = onlyNumberArgumentsError;
+      result = error.invalidArgumentError;
     } else {
       switch(operation) {
         case 'add': result = op1 + op2; break;
@@ -21,7 +20,7 @@ module.exports = {
         case 'div': result = op1 / op2; break;
         default:    result = "unknown"; break;
       }
-      if (result === "unknown") { result = unknownOperationError }
+      if (result === "unknown") { result = error.unknownOperationError; }
     }
     return result;
   }

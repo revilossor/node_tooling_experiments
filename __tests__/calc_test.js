@@ -1,17 +1,16 @@
-jest.unmock('../app/calc.js');
+jest.unmock('../app/calc').unmock('../app/error');
 
 describe('calc', () => {
   var calc;
-
-  const invalidArgumentError = new Error("only accepts number arguments!");
-  const unknownOperationError = new Error("unrecognised operation! cannot calculate!");
+  var error;
 
   beforeAll(() => {
-    calc = require('../app/calc.js');
+    calc = require('../app/calc');
+    error = require('../app/error');
   });
 
   it('returns correct error for unrecognised operations', () => {
-      expect(calc.doOperation('unrecognised', 1, 2)).toEqual(unknownOperationError);
+      expect(calc.doOperation('unrecognised', 1, 2)).toBe(error.unknownOperationError);
   });
 
   describe('add', () => {
@@ -19,7 +18,7 @@ describe('calc', () => {
       expect(calc.doOperation('add', 1, 2)).toBe(3);
     });
     it('only accepts number arguments', () => {
-      expect(calc.doOperation('add', '1' ,2)).toEqual(invalidArgumentError);
+      expect(calc.doOperation('add', '1' ,2)).toBe(error.invalidArgumentError);
     });
   });
   describe('sub', () => {
@@ -27,7 +26,7 @@ describe('calc', () => {
       expect(calc.doOperation('sub', 1, 2)).toBe(-1);
     });
     it('only accepts number arguments', () => {
-      expect(calc.doOperation('add', '1' ,2)).toEqual(invalidArgumentError);
+      expect(calc.doOperation('add', '1' ,2)).toBe(error.invalidArgumentError);
     });
   });
   describe('mul', () => {
@@ -35,7 +34,7 @@ describe('calc', () => {
       expect(calc.doOperation('mul', 2, 2)).toBe(4);
     });
     it('only accepts number arguments', () => {
-      expect(calc.doOperation('add', '1' ,2)).toEqual(invalidArgumentError);
+      expect(calc.doOperation('add', '1' ,2)).toBe(error.invalidArgumentError);
     });
   });
   describe('div', () => {
@@ -43,7 +42,7 @@ describe('calc', () => {
       expect(calc.doOperation('div', 2, 2)).toBe(1);
     });
     it('only accepts number arguments', () => {
-      expect(calc.doOperation('add', '1' ,2)).toEqual(invalidArgumentError);
+      expect(calc.doOperation('add', '1' ,2)).toBe(error.invalidArgumentError);
     });
   });
 });

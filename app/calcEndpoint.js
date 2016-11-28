@@ -12,10 +12,8 @@ function calculate(operation, operands, result) {
 }
 
 router.route('/:operation').get((req, res) => {
-  console.log('result is : ' + response.get(calculate(req.params.operation, req.query.data)));
   res.json(response.get(calculate(req.params.operation, req.query.data)));
 }).post((req, res) => {
-    console.log('result is : ' + response.get(calculate(req.params.operation, req.body.data)));
   res.json(response.get(calculate(req.params.operation, req.body.data)));
 });
 

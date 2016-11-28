@@ -25,3 +25,11 @@ The calls and the assertions are set up in [postman](https://www.getpostman.com/
 [Jest](https://www.npmjs.com/package/jest-cli) is used to run unit tests. Code coverage reports will be generated in coverage/
 
  ---
+### TODO
+
+ - handle no arguments passed - in calc and calcEndpoint
+  - rest tests
+  - unit tests
+ - a frontend
+  - in react?
+  - acceptance tests?

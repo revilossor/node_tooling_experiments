@@ -10,7 +10,8 @@
     "start": "nodemon app/main.js",
     "start-debug": "node --debug-brk app/main.js",
     "attach-debug": "node debug localhost:5858",
-    "chrome-debug": "node --inspect app/main.js"
+    "chrome-debug": "node --inspect app/main.js",
+    "build":"NODE_ENV=production node_modules/.bin/webpack -p"
   },
   "jest": {
     "verbose": true,
@@ -21,9 +22,19 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.6.1"
   },
   "devDependencies": {
-    "jest-cli": "^17.0.3"
+    "jest-cli": "^17.0.3",
+    "babel-loader": "^6.2.8",
+    "webpack": "^1.13.3"
   }
 }

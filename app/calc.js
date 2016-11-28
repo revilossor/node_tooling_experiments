@@ -1,5 +1,5 @@
-var onlyNumberArgumentsError = new Error("only accepts number arguments!");
-var unknownOperationError = new Error("unrecognised operation! cannot calculate!");
+const onlyNumberArgumentsError = new Error("only accepts number arguments!");
+const unknownOperationError = new Error("unrecognised operation! cannot calculate!");
 
 function areAllArgsNumbers(args) {
   for(i = 0; i < args.length; i++) {
@@ -10,16 +10,19 @@ function areAllArgsNumbers(args) {
 
 module.exports = {
   doOperation:function(operation, op1, op2) {
-    if(!areAllArgsNumbers([op1, op2])) { throw onlyNumberArgumentsError; }
     var result;
-    switch(operation) {
-      case 'add': result = op1 + op2; break;
-      case 'sub': result = op1 - op2; break;
-      case 'mul': result = op1 * op2; break;
-      case 'div': result = op1 / op2; break;
-      default:    result = "unknown"; break;
+    if(!areAllArgsNumbers([op1, op2])) {
+      result = onlyNumberArgumentsError;
+    } else {
+      switch(operation) {
+        case 'add': result = op1 + op2; break;
+        case 'sub': result = op1 - op2; break;
+        case 'mul': result = op1 * op2; break;
+        case 'div': result = op1 / op2; break;
+        default:    result = "unknown"; break;
+      }
+      if (result === "unknown") { result = unknownOperationError }
     }
-    if (result === "unknown") { throw unknownOperationError }
     return result;
   }
 }

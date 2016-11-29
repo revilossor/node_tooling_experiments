@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import ButtonArea from './ButtonArea';
+import CalculatorController from '../controller/CalculatorController';
 
 export default class Calculator extends React.Component {
   constructor(props, context) {
@@ -10,12 +11,19 @@ export default class Calculator extends React.Component {
       isShowingResult:true,
       buttons:['7','8','9','/','4','5','6','*','1','2','3','-','0','.','+','=']
     }
+
+    this.controller = new CalculatorController(this);
+
     this.buttonPressHandler = this.buttonPressHandler.bind(this);
   }
-  buttonPressHandler() {
+  buttonPressHandler(event) {
     console.log('pressed button ' +  event.target.innerHTML);
+    const pressedButton = event.target.innerHTML;
+
+    this.controller.test();
+
     this.setState({
-      display:this.state.display += event.target.innerHTML
+     display:this.state.display += pressedButton
     });
   }
   render() {

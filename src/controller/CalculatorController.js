@@ -7,4 +7,7 @@ export default class CalculatorController extends ReactComponentController {
   updateDisplay(message) {
     this.setState({display:message});
   }
+  buttonPressHandler(event) {
+    console.log('press button ' + event.target.innerHTML);
+  }
 }

@@ -16,7 +16,6 @@ const E_BUTTON_TYPES = {
   equals:'=',
   point:'.'
 };
-//buttons:['7','8','9','/','4','5','6','*','1','2','3','-','0','.','+','=']
 module.exports = {
   all:[
     E_BUTTON_TYPES.seven,   E_BUTTON_TYPES.eight,   E_BUTTON_TYPES.nine,    E_BUTTON_TYPES.divide,

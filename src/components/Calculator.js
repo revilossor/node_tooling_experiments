@@ -2,6 +2,7 @@ import React from 'react';
 import Display from './Display';
 import ButtonArea from './ButtonArea';
 import CalculatorController from '../controller/CalculatorController';
+import ButtonTypes from '../helper/ButtonTypes';
 
 export default class Calculator extends React.Component {
   constructor(props, context) {
@@ -9,7 +10,7 @@ export default class Calculator extends React.Component {
     this.state = {
       display:'helloDisplay',
       isShowingResult:true,
-      buttons:['7','8','9','/','4','5','6','*','1','2','3','-','0','.','+','=']
+      buttons:ButtonTypes.all
     }
     this.controller = new CalculatorController(this);
   }

@@ -20,11 +20,10 @@ export default class Calculator extends React.Component {
     console.log('pressed button ' +  event.target.innerHTML);
     const pressedButton = event.target.innerHTML;
 
-    this.controller.test();
-
-    this.setState({
-     display:this.state.display += pressedButton
-    });
+    this.controller.updateDisplay('hello prototype method bound to arbitrary context');
+//    this.setState({
+//     display:this.state.display += pressedButton
+//    });
   }
   render() {
     return (

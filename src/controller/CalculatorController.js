@@ -1,20 +1,10 @@
-var ctx;
+import ReactComponentController from './ReactComponentController'
 
-function CalculatorController(context) {
-  ctx = context;
-  this.test = function() {
-    //console.log('state : ' + JSON.stringify(this.state));
-    this.setState({
-      display:'hello view controller'
-    });
-
+export default class CalculatorController extends ReactComponentController {
+  constructor(ctx) {
+    super(ctx);
+  }
+  updateDisplay(message) {
+    this.setState({display:message});
   }
 }
-
-CalculatorController.prototype = new Proxy(CalculatorController, {
-  get:function(target, property, receiver) {
-    return (property in target) ? target[property] : ctx[property];
-  }
-});
-
-module.exports = CalculatorController;

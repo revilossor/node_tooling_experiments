@@ -5,7 +5,7 @@ export default class ButtonArea extends React.Component {
   render() {
     return (
       <div className="buttons">{
-        Object.keys(this.props.buttons).map((key) => <Button operation={key} onClick={this.props.buttons[key]}/>)
+        this.props.buttons.map((button) => <Button operation={button} onClick={this.props.buttonPressHandler}/>)
       }</div>
     );
   }

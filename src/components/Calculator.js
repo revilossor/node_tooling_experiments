@@ -22,15 +22,19 @@ var buttonFunctionMap = {
 };
 
 export default class Calculator extends React.Component {
-  getInitialState() {
-    return {
-      displayString:'helloDisplay'
-    };
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      display:'helloDisplay'
+    }
+    setInterval(()=> {
+      this.setState({display:this.state.display += '!'});
+    }, 1000);
   }
   render() {
     return (
       <div className="container">
-        <Display/>
+        <Display content={this.state.display}/>
         <ButtonArea buttons={buttonFunctionMap}/>
       </div>
     );

@@ -6,11 +6,11 @@ export default class Button extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    console.log('clicky ' + this.props.operation);
+    this.props.onClick(this.props.operation);
   }
   render() {
     return (
-      <span className="button resetBtn" onClick={this.handleClick} >{this.props.operation}</span>
+      <span className="button resetBtn" onClick={this.props.onClick} >{this.props.operation}</span>
     );
   }
 }

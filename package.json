@@ -7,11 +7,12 @@
     "test": "npm run test-unit && npm run test-rest",
     "test-rest": "newman run newman/node_debug.postman_collection",
     "test-unit": "jest",
-    "start": "nodemon app/main.js",
     "start-debug": "node --debug-brk app/main.js",
     "attach-debug": "node debug localhost:5858",
     "chrome-debug": "node --inspect app/main.js",
-    "build":"NODE_ENV=production node_modules/.bin/webpack -p"
+    "build":"NODE_ENV=production node_modules/.bin/webpack -p",
+    "start": "nodemon app/main.js",
+    "open":"bash ./script/open.sh"
   },
   "jest": {
     "verbose": true,

@@ -1,11 +1,13 @@
 import ReactComponentController from './ReactComponentController'
 import ButtonHelper from '../helper/ButtonHelper'
 import Errors from '../helper/Errors';
+import CalculatorService from '../helper/CalculatorService';
 
 export default class CalculatorController extends ReactComponentController {
   constructor(ctx) {
     super(ctx);
     this._buttonHelper = new ButtonHelper();
+    this._calculatorService = new CalculatorService();
   }
   processKey(key) {
     if(this._buttonHelper.isEquality(key)) {
@@ -26,6 +28,7 @@ export default class CalculatorController extends ReactComponentController {
       this.setState({isShowingResult:true, hasOperator:false});
       // TODO send equation
       this.setDisplay('result go here');
+      this._calculatorService.send();
     }
   }
   processOperatorKey(key) {

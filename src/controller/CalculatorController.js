@@ -26,9 +26,11 @@ export default class CalculatorController extends ReactComponentController {
       this.setDisplay(0);
     } else {
       this.setState({isShowingResult:true, hasOperator:false});
-      // TODO send equation
-      this.setDisplay('result go here');
-      this._calculatorService.send();
+      this._calculatorService.send().then((result)=> {
+        this.setDisplay(result);
+      }).catch((result)=> {
+        console.log('error result is > ' + result);
+      });
     }
   }
   processOperatorKey(key) {

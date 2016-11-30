@@ -7,9 +7,7 @@ export default class Stage extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
         <Calculator/>
-        <Footer/>
       </div>
     );
   }

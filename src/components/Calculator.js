@@ -24,7 +24,7 @@ export default class Calculator extends React.Component {
     return (
       <div className="container">
         <Display content={this.state.display}/>
-        <ButtonArea buttons={this.state.buttons} buttonPressHandler={this.buttonPressHandler}/>
+        <ButtonArea buttonRows={this.state.buttons} buttonPressHandler={this.buttonPressHandler}/>
       </div>
     );
   }

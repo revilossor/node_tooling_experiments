@@ -1,5 +1,6 @@
 import ReactComponentController from './ReactComponentController'
 import ButtonHelper from '../helper/ButtonHelper'
+import Errors from '../helper/Errors';
 
 export default class CalculatorController extends ReactComponentController {
   constructor(ctx) {
@@ -8,18 +9,28 @@ export default class CalculatorController extends ReactComponentController {
   }
   processKey(key) {
     if(this._buttonHelper.isEquality(key)) {
-      console.log('pressed button is an equals');
+      this.processEqualityKey(key);
     } else if (this._buttonHelper.isOperator(key)) {
-      console.log('pressed button is an operator');
+      this.processOperatorKey(key);
     } else if (this._buttonHelper.isOperand(key)) {
-      console.log('pressed button is an operand');
+      this.processOperandKey(key);
     } else {
-      console.log('pressed an unrecognised button!');
+      throw Errors.UNRECOGNISED_BUTTON_TYPE_ERROR;
     }
   }
-  updateDisplay(message) {
+  processEqualityKey(key) {
+    console.log('processEqualityKey : ' + key);
+  }
+  processOperatorKey(key) {
+    console.log('processOperatorKey : ' + key);
+  }
+  processOperandKey(key) {
+    console.log('processOperandKey : ' + key);
+  }
+  setDisplay(message) {
     this.setState({display:message});
   }
-
-
+  appendDisplay(message) {
+    this.setDisplay(this.state.display + message);
+  }
 }

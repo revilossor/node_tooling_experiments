@@ -19,13 +19,33 @@ export default class CalculatorController extends ReactComponentController {
     }
   }
   processEqualityKey(key) {
-    console.log('processEqualityKey : ' + key);
+    if(this.state.isShowingResult) {
+      this.setState({isShowingResult:false});
+      this.setDisplay(0);
+    } else {
+      this.setState({isShowingResult:true});
+      // TODO send equation
+      this.setDisplay('result go here');
+    }
   }
   processOperatorKey(key) {
-    console.log('processOperatorKey : ' + key);
+    if(this.state.isShowingResult) {
+      this.setState({isShowingResult:false});
+      this.setDisplay(0); // TODO parse normal, PN and RPN calc??
+    } else {
+      this.appendDisplay(key);
+      // TODO append to equation
+    }
   }
   processOperandKey(key) {
-    console.log('processOperandKey : ' + key);
+    if(this.state.isShowingResult) {
+      this.setState({isShowingResult:false});
+      this.setDisplay(key);
+      // TODO start new equation
+    } else {
+      this.appendDisplay(key);
+      // TODO append to equation
+    }
   }
   setDisplay(message) {
     this.setState({display:message});

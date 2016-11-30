@@ -1,10 +1,6 @@
-import BaseHelper from './BaseHelper';
-
-export default class CalculatorService extends BaseHelper {
-  constructor() {
-    super();
-  }
+export default class CalculatorService {
   send(equation) {
+    console.log('send equation : ' + JSON.stringify(equation));
     return new Promise((resolve, reject) => {
       var xhr = new XMLHttpRequest();
       xhr.addEventListener('load', () => {
@@ -12,10 +8,8 @@ export default class CalculatorService extends BaseHelper {
           resolve(JSON.parse(xhr.responseText).result):
           reject(JSON.parse(xhr.responseText).error);
       });
-      xhr.open("GET", 'http://localhost:8080/calc/add?data=[10,5]');
+      xhr.open("GET", 'http://localhost:8080/calc/' + equation.operation + '?data=' + JSON.stringify(equation.operands));
       xhr.send();
     });
   }
-
-
 }

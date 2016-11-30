@@ -2,12 +2,14 @@ import ReactComponentController from './ReactComponentController'
 import ButtonHelper from '../helper/ButtonHelper'
 import Errors from '../helper/Errors';
 import CalculatorService from '../helper/CalculatorService';
+import EquationParser from '../helper/EquationParser';
 
 export default class CalculatorController extends ReactComponentController {
   constructor(ctx) {
     super(ctx);
     this._buttonHelper = new ButtonHelper();
     this._calculatorService = new CalculatorService();
+    this._equationParser = new EquationParser();
   }
   processKey(key) {
     if(this._buttonHelper.isEquality(key)) {
@@ -26,7 +28,7 @@ export default class CalculatorController extends ReactComponentController {
       this.setDisplay(0);
     } else {
       this.setState({isShowingResult:true, hasOperator:false});
-      this._calculatorService.send().then((result)=> {
+      this._calculatorService.send(this._equationParser.getStandardised(this.state.display)).then((result)=> {
         this.setDisplay(result);
       }).catch((result)=> {
         console.log('error result is > ' + result);

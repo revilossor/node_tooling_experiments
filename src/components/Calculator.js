@@ -10,7 +10,8 @@ export default class Calculator extends React.Component {
     this.state = {
       display:'helloDisplay',
       isShowingResult:true,
-      buttons:ButtonTypes.all
+      buttons:ButtonTypes.all,
+      hasOperator:false
     }
     this.controller = new CalculatorController(this);
     this.buttonPressHandler = this.buttonPressHandler.bind(this);

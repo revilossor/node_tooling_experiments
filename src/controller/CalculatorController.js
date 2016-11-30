@@ -23,7 +23,7 @@ export default class CalculatorController extends ReactComponentController {
       this.setState({isShowingResult:false});
       this.setDisplay(0);
     } else {
-      this.setState({isShowingResult:true});
+      this.setState({isShowingResult:true, hasOperator:false});
       // TODO send equation
       this.setDisplay('result go here');
     }
@@ -32,7 +32,11 @@ export default class CalculatorController extends ReactComponentController {
     if(this.state.isShowingResult) {
       this.setState({isShowingResult:false});
       this.setDisplay(0); // TODO parse normal, PN and RPN calc??
+    } else if (this.state.hasOperator) {
+      this.setState({hasOperator:false});
+      this.setDisplay(0);
     } else {
+      this.setState({hasOperator:true});
       this.appendDisplay(key);
       // TODO append to equation
     }
@@ -51,6 +55,9 @@ export default class CalculatorController extends ReactComponentController {
     this.setState({display:message});
   }
   appendDisplay(message) {
-    this.setDisplay(this.state.display + message);
+    this.setDisplay(this.getCurrentDisplay() + message);
+  }
+  getCurrentDisplay() {
+    return (this.state.display == '0') ? '' : this.state.display;
   }
 }
